@@ -1,6 +1,8 @@
 import styles from './Navbar.module.css'
 
 function Navbar(){
+
+    return(
     <nav className={styles.navbar}>
         <ul>
             <li>
@@ -14,6 +16,7 @@ function Navbar(){
             </li>
         </ul>
     </nav>
+    )
 };
 
 export default Navbar;
