@@ -3,8 +3,15 @@
     padding: 0.5rem;
     font-weight: bold;
     background-color: #b49beb;
-    border: 1px solid #f8dffb;
+    border: none;
     border-radius: 0.5rem;
     margin: 2rem auto;
     cursor: pointer;
+    box-shadow: 3px 3px 12px -5px rgba(0,0,0,0.59);
+}
+
+.btn:hover,
+.btn:active{
+    background-color: #7e6aaa;
+    box-shadow: 1px 1px 10px -7px rgba(0,0,0,0.59);
 }

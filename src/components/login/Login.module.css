@@ -2,6 +2,7 @@
     max-width: 50rem;
     min-height: 25rem;
     background: #F8F8FF;
+    box-shadow: 6px 6px 12px -5px rgba(0,0,0,0.75);
     margin: 0 auto;
     padding: 0.5rem;
     position: relative;
@@ -37,3 +38,14 @@ input:focus{
     outline: none;
 }
 
+@media (max-width: 600px){
+    .login-container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        top: 0;
+        transform: translateY(8%);
+    }
+}
