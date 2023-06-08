@@ -1,0 +1,38 @@
+.navbar ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.navbar li{
+    margin: 0;
+    margin-left: 2rem;
+}
+
+.navbar a{
+    text-decoration: none;
+    color: #9584E0;
+}
+
+.navbar a:hover,
+.navbar a:active{
+    color: #7c6ebc;
+}
+
+.navbar button {
+    font: inherit;
+    background: #E3BCF3;
+    border: 1px solid #E3BCF3;
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.26);
+    border-radius: 20px;
+}
+
+.navbar button:hover,
+.navbar button:active{
+    background: #b18ebf;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.26);
+}
