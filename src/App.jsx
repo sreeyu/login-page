@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styles from './App.module.css'
 import Login from './components/login/Login';
+import Home from './components/home/Home';
 
 function App() {
 
@@ -16,7 +17,9 @@ function App() {
   
   return(
     <div className={styles.container}>
-      <Login className={styles.login} onLogin ={getLogin}/>
+      
+      {!isLoggedIn && <Login className={styles.login} onLogin ={getLogin}/>}
+      {isLoggedIn && <Home />}
     </div>
   )
 }
