@@ -1,11 +1,11 @@
 import Navbar from '../UI components/Navbar'
 import styles from './Home.module.css'
 
-function Home(){
+function Home(props){
     
     return(
         <div className={styles.home}>
-            <Navbar />
+            <Navbar onLogout={props.onLogout}/>
             <h1>Welcome back!</h1>
         </div>
     )

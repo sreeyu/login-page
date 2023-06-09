@@ -19,7 +19,7 @@ function App() {
     <div className={styles.container}>
       
       {!isLoggedIn && <Login className={styles.login} onLogin ={getLogin}/>}
-      {isLoggedIn && <Home />}
+      {isLoggedIn && <Home onLogout={getLogOut} />}
     </div>
   )
 }

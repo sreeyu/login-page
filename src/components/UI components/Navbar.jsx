@@ -1,6 +1,6 @@
 import styles from './Navbar.module.css'
 
-function Navbar(){
+function Navbar(props){
 
     return(
     <nav className={styles.navbar}>
@@ -12,7 +12,7 @@ function Navbar(){
                 <a href="/">Admin</a>
             </li>
             <li>
-                <button>Logout</button>
+                <button onClick={props.onLogout} >Logout</button>
             </li>
         </ul>
     </nav>
