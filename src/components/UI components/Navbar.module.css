@@ -1,14 +1,18 @@
+.navbar{
+    background: #fee5fb;
+}
 .navbar ul{
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
     align-items: center;
+    justify-content: flex-end;
 }
 
 .navbar li{
     margin: 0;
-    margin-left: 2rem;
+    margin-right: 2rem;
 }
 
 .navbar a{
@@ -26,9 +30,10 @@
     background: #E3BCF3;
     border: 1px solid #E3BCF3;
     padding: 0.5rem 1.5rem;
+    margin: .5rem 0;
     cursor: pointer;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.26);
-    border-radius: 20px;
+    border-radius: 0.5rem;
 }
 
 .navbar button:hover,

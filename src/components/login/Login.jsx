@@ -7,8 +7,8 @@ function Login(props){
 
     const [userEmail, setUserEmail] = useState('');
     const [userPassword, setUserPassword] = useState('');
-    const [validatePassword, setValidatePassword] = useState(false);
-    const [validateEmail, setValidateEmail] = useState(false)
+    const [validatePassword, setValidatePassword] = useState();
+    const [validateEmail, setValidateEmail] = useState()
     const [formIsvalid, setFormIsvalid] = useState(false);
 
     const getUserEmail = (event) => {
