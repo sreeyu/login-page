@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/login-page/static/css/main.ee362ed1.css",
+    "main.js": "/login-page/static/js/main.0cf89a36.js",
+    "static/media/nightSky.jpg": "/login-page/static/media/nightSky.f01c70660215ff88f2b7.jpg",
+    "index.html": "/login-page/index.html",
+    "main.ee362ed1.css.map": "/login-page/static/css/main.ee362ed1.css.map",
+    "main.0cf89a36.js.map": "/login-page/static/js/main.0cf89a36.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ee362ed1.css",
+    "static/js/main.0cf89a36.js"
+  ]
+}
