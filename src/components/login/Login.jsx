@@ -1,4 +1,4 @@
-import React, {  useState } from 'react';
+import React, {  useState, useEffect } from 'react';
 import Button from '../UI components/Button';
 import styles from './Login.module.css'
 
@@ -11,20 +11,18 @@ function Login(props){
     const [validateEmail, setValidateEmail] = useState()
     const [formIsvalid, setFormIsvalid] = useState(false);
 
+    useEffect(() => {
+        setFormIsvalid(
+            userEmail.includes('@') && userPassword.trim().length > 6
+        );
+    }, [userEmail, userPassword]);
+    
     const getUserEmail = (event) => {
         setUserEmail(event.target.value);
-
-        setFormIsvalid(
-            event.target.value.includes('@') && userPassword.trim().length > 6
-        );
     };
 
     const getUserPassword = (event) => {
         setUserPassword(event.target.value);
-
-        setFormIsvalid(
-            event.target.value.trim().length > 6 && userEmail.includes('@')
-        );
     };
 
     const getEmailValidation = (event) =>{
