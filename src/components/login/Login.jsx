@@ -15,13 +15,26 @@ const emailReducer = (state, action) => {
     return {value: '', isValid: false}
 }
 
+const passwordReducer = (state, action) => {
+
+    if(action.type === 'USER_INPUT'){
+        return {value: action.val, isValid: action.val.trim().length > 6}
+    }
+
+    if(action.type === 'INPUT_BLUR'){
+        return {value: state.value, isValid: state.value.trim().length > 6}
+    }
+
+    return {value: '', isValid: false};
+}
+
 
 function Login(props){
 
     // const [userEmail, setUserEmail] = useState('');
     // const [validateEmail, setValidateEmail] = useState();
-    const [userPassword, setUserPassword] = useState('');
-    const [validatePassword, setValidatePassword] = useState();
+    // const [userPassword, setUserPassword] = useState('');
+    // const [validatePassword, setValidatePassword] = useState();
     const [formIsvalid, setFormIsvalid] = useState(false);
 
     // useEffect(() => {
@@ -39,16 +52,18 @@ function Login(props){
 
     const [emailState, dispatchEmail] = useReducer (emailReducer, {value: '', isValid: null});
     
+    const [passwordState, dispatchPassword] = useReducer(passwordReducer, {value: '', isValid: null});
+    
     const getUserEmail = (event) => {
         dispatchEmail({type: 'USER_INPUT', val: event.target.value})
 
         setFormIsvalid(
-            event.target.value.includes('@') && userPassword.trim().length > 6
+            event.target.value.includes('@') && passwordState.isValid
         );
     };
 
     const getUserPassword = (event) => {
-        setUserPassword(event.target.value);
+        dispatchPassword({type: 'USER_INPUT', val: event.target.value})
 
         setFormIsvalid(
             emailState.isValid && event.target.value.trim().length > 6
@@ -60,14 +75,12 @@ function Login(props){
     };
 
     const getPasswordValidation = (event) => {
-        setValidatePassword(
-            event.target.value.trim().length > 6
-        );
+        dispatchPassword({type: 'INPUT_BLUR'})
     };
 
     const getUserInfo = (event) => {
         event.preventDefault();
-        props.onLogin(emailState.value, userPassword)
+        props.onLogin(emailState.value, passwordState.value)
     }
     
     return(
@@ -77,7 +90,7 @@ function Login(props){
                 <label htmlFor="e-mail">E-mail</label>
                 <input value={emailState.value} className={`${emailState.isValid === false ? styles.invalid : ''}`} id='e-mail' type="email" onChange={getUserEmail} onBlur={getEmailValidation} />
                 <label htmlFor="pword">Password</label>
-                <input value={userPassword} className={`${validatePassword === false ? styles.invalid : ''}`} id='pword' type="password" onChange={getUserPassword} onBlur={getPasswordValidation} />
+                <input value={passwordState.value} className={`${passwordState.isValid === false ? styles.invalid : ''}`} id='pword' type="password" onChange={getUserPassword} onBlur={getPasswordValidation} />
                 <Button type='submit' className={styles['login-btn']} disabled={!formIsvalid} >Log In</Button>
             </form>
             
