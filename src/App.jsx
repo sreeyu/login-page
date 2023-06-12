@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styles from './App.module.css'
 import Login from './components/login/Login';
 import Home from './components/home/Home';
+import AuthContext from './components/store/auth-context';
 
 function App() {
 
@@ -25,11 +26,10 @@ function App() {
   }
   
   return(
-    <div className={styles.container}>
-      
+    <AuthContext.Provider value={{isLoggedIn: isLoggedIn, onLogout: getLogOut}}>
       {!isLoggedIn && <Login className={styles.login} onLogin ={getLogin}/>}
-      {isLoggedIn && <Home onLogout={getLogOut} />}
-    </div>
+      {isLoggedIn && <Home />}
+    </AuthContext.Provider>
   )
 }
 

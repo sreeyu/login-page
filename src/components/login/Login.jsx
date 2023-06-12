@@ -1,6 +1,7 @@
 import React, {  useState, useEffect, useReducer } from 'react';
 import Button from '../UI components/Button';
 import styles from './Login.module.css'
+import Navbar from '../UI components/Navbar';
 
 const emailReducer = (state, action) => {
 
@@ -87,6 +88,7 @@ function Login(props){
     }
     
     return(
+        
         <div className={styles['login-container']}>
             <img src={require("../images/nightSky.jpg")} alt="no" />
             <form onSubmit={getUserInfo}>

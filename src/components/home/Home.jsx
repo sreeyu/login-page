@@ -5,7 +5,7 @@ function Home(props){
     
     return(
         <div className={styles.home}>
-            <Navbar onLogout={props.onLogout}/>
+            <Navbar />
             <h1>Welcome back!</h1>
         </div>
     )
