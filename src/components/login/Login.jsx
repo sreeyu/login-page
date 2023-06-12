@@ -88,7 +88,8 @@ function Login(props){
     }
     
     return(
-        
+        <div className={styles['login-page']}>
+            <Navbar />
         <div className={styles['login-container']}>
             <img src={require("../images/nightSky.jpg")} alt="no" />
             <form onSubmit={getUserInfo}>
@@ -99,6 +100,7 @@ function Login(props){
                 <Button type='submit' className={styles['login-btn']} disabled={!formIsvalid} >Log In</Button>
             </form>
             
+        </div>
         </div>
     )
 };

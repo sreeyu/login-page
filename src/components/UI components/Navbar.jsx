@@ -8,6 +8,7 @@ function Navbar(props){
 
     return(
         <nav className={styles.navbar}>
+            <h2>My Website</h2>
             <ul>
             {ctx.isLoggedIn && <li>
                     <a href="/">Users</a>
