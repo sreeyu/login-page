@@ -27,22 +27,6 @@
     font-weight: bold;
 }
 
-.login-container form input{
-    margin: 0.5rem 0;
-    border: 1px solid rgb(206, 202, 202);
-    border-radius: 0.4rem;
-    padding: 0.3rem;
-}
-
-input:focus{
-    outline: none;
-}
-
-.invalid{
-    border-color: red;
-    background: #fbdada;
-}
-
 @media (max-width: 600px){
     .login-container{
         display: flex;

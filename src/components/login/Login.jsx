@@ -2,6 +2,7 @@ import React, {  useState, useEffect, useReducer } from 'react';
 import Button from '../UI components/Button';
 import styles from './Login.module.css'
 import Navbar from '../UI components/Navbar';
+import Input from '../UI components/Input';
 
 const emailReducer = (state, action) => {
 
@@ -93,10 +94,8 @@ function Login(props){
         <div className={styles['login-container']}>
             <img src={require("../images/nightSky.jpg")} alt="no" />
             <form onSubmit={getUserInfo}>
-                <label htmlFor="e-mail">E-mail</label>
-                <input value={emailState.value} className={`${emailState.isValid === false ? styles.invalid : ''}`} id='e-mail' type="email" onChange={getUserEmail} onBlur={getEmailValidation} />
-                <label htmlFor="pword">Password</label>
-                <input value={passwordState.value} className={`${passwordState.isValid === false ? styles.invalid : ''}`} id='pword' type="password" onChange={getUserPassword} onBlur={getPasswordValidation} />
+                <Input id={"Email"} type={"email"} value={emailState.value} onChange={getUserEmail} onBlur={getEmailValidation} isValid={emailValid} />
+                <Input id={"Password"} type={"password"} value={passwordState.value} onChange={getUserPassword} onBlur={getPasswordValidation} isValid={passwordValid} />
                 <Button type='submit' className={styles['login-btn']} disabled={!formIsvalid} >Log In</Button>
             </form>
             

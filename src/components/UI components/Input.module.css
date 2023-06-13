@@ -1,0 +1,19 @@
+.input-fields{
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.invalid{
+    border-color: red;
+    background: #fbdada;
+}
+.input-fields input{
+    margin: 0.5rem 0;
+    border: 1px solid rgb(206, 202, 202);
+    border-radius: 0.4rem;
+    padding: 0.3rem;
+}
+.input-fields input:focus{
+    outline: none;
+}
